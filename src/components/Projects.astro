@@ -1,16 +1,13 @@
 ---
 import ProjectCard from "./ui/ProjectCard.vue";
-import imejiImage from "../assets/projectsimage/imeji.png";
-import apipiImage from "../assets/projectsimage/apipi.png";
-import acortadorImage from "../assets/projectsimage/acortador.png";
-import kanbanImage from "../assets/projectsimage/kanban.png";
+
 
 const projects = [
   {
     title: "ImeJI (en proceso)",
     description:
       "Sitio web que utilizara los servicios que ofrece la API de procesamiento de imagenes utilizando bentogrid, incluyendo un editor de imagenes, galeria de imagenes y un sistema de autenticacion de usuarios con JWT",
-    image: imejiImage.src,
+    image: '/projectsImage/imeji.png',
     technologies: [
       { name: "React", img: "/images/react.svg", color: "#5091B1" },
       { name: "Tailwind", img: "/images/tailwind.svg", color: "#44A8B3" },
@@ -21,7 +18,7 @@ const projects = [
     title: "API Procesador de Imágenes",
     description:
       "API REST para el procesamiento de imagenes, incluye endpoints para subir imagenes, guardar imagenes en S3, cambiar tamaño, rotar, girar y cambiar el formato. Ademas incluye autenticacion de usuarios con JWT.",
-    image: apipiImage.src,
+    image: '/projectsImage/apipi.png',
     technologies: [
       { name: "Express", img: "/images/node.svg", color: "#93D344" },
       { name: "MongoDB", img: "/images/mongo.svg", color: "#429744" },
@@ -39,7 +36,7 @@ const projects = [
     title: "Acortar URLs",
     description:
       "Acortar URLs funciona mediante un identificador único para cada URL que sirve tanto para acortar la URL y buscar la URL original. La URL acortada se genera a partir de un identificador único que se asigna a cada URL que se acorta.",
-    image: acortadorImage.src,
+    image: '/projectsImage/acortador.png',
     technologies: [
       { name: "Angular", img: "/images/angular.svg", color: "#c3002f" },
       { name: "Tailwind", img: "/images/tailwind.svg", color: "#44a8b3" },
@@ -62,7 +59,7 @@ const projects = [
     title: "KANBAN",
     description:
       "Web para utilizar la metodología KANBAN utilizando DRAG AND DROP que incluye funciones para agregar tareas, asignar encargado, fechas de inicio y termino.",
-    image: kanbanImage.src,
+    image: "/projectsImage/kanban.png",
     technologies: [
       { name: "Angular", img: "/images/angular.svg", color: "#c3002f" },
       { name: "Bootstrap", img: "/images/bootstrap.svg", color: "#563d7c" },
@@ -78,18 +75,18 @@ const projects = [
 <section id="proyectos" class="min-h-full mx-auto overflow-auto">
   <h2 class="text-center text-[#dddf00] font-bold p-3">Mis Proyectos</h2>
 
-  <div class="flex flex-col gap-6">
-    {
-      projects.map((project) => (
-        <ProjectCard
-          client:load
-          title={project.title}
-          description={project.description}
-          image={project.image}
-          technologies={project.technologies}
-          links={project.links}
-        />
-      ))
-    }
-  </div>
+<div class="flex flex-col gap-6">
+  {
+    projects.map((project) => (
+      <ProjectCard
+        client:load
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        technologies={project.technologies}
+        links={project.links}
+      />
+    ))
+  }
+</div>
 </section>
