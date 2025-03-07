@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+h1{
+    font-family: "New Amsterdam", sans-serif;
+    font-style: normal;
+}
+h2{
+    font-family: "New Amsterdam", sans-serif;
+    font-style: normal;
+    @apply text-5xl;
+}
+h3{
+    font-family: "New Amsterdam", sans-serif;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    @apply text-2xl;
+}
+h4{
+    font-family: "New Amsterdam", sans-serif;
+    font-style: normal;
+    @apply text-xl;
+}
+
+p{
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+span{
+    font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  @apply text-sm;
+}
+time{
+    font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  @apply text-sm;
+  color: var(--text-color);
+}
+li{
+    font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  @apply text-lg;
+}
+
+
+[data-theme="theme-1"] {
+  --bg-color: #1E034B;
+  --alternate-color: #6B21A8;
+  --text-color: #ffffff;
+  --title-color: #DDDF00;
+  --paragraph-color: #f0f0f0;
+  --subtext-color: #9ca3af;
+  --header-color: #3B0764;
+  --projectstitles-color: #DDDF00;
+  --line-color: #DDDF00;
+  --bg-image: url('/images/bg-1.svg');
+  --gradient-from: #2563eb; /* blue-600 */
+  --gradient-via: #22c55e; /* green-500 */
+  --gradient-to: #818cf8; /* indigo-400 */
+}
+
+[data-theme="theme-2"] {
+  --bg-color: #293241;
+  --alternate-color: #3d5a80;
+  --text-color: #ee6c4d;
+  --title-color: #98c1d9;
+  --paragraph-color: #e0fbfc;
+  --subtext-color: #9ca3af;
+  --header-color: #3d5a80;
+  --projectstitles-color: #ee6c4d;
+  --line-color: #ee6c4d;
+  --bg-image: url('/images/bg-2.svg');
+  --gradient-from: #98c1d9;
+  --gradient-via: #ee6c4d;
+  --gradient-to: #e0fbfc; 
+}
+
+[data-theme="theme-3"] {
+  --bg-color: #aed9e0;
+  --alternate-color: #aed9e0;
+  --text-color: #faf3dd;
+  --title-color: #aed9e0;
+  --paragraph-color: #faf3dd;
+  --subtext-color: #aed9e0;
+  --header-color: #ffa69e;
+  --projectstitles-color: #aed9e0;
+  --line-color: #aed9e0;
+  --bg-image: url('/images/bg-3.svg');
+  --gradient-from: #ffa69e; 
+  --gradient-via: #aed9e0; 
+  --gradient-to: #b8f2e6;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h2 {
+  color: var(--title-color);
+}
+h3 {
+  color: var(--title-color);
+}
+
+
+p {
+  color: var(--paragraph-color);
+}
+span {
+  color: var(--text-color);
+}
+.subtext{
+  color: var(--subtext-color);
+}
+.header{
+  background-color: var(--header-color);
+}
+.projectstitles{
+  color: var(--projectstitles-color);
+}
+.line{
+  background-color: var(--line-color);
+}
+.gradient-text {
+  background-image: linear-gradient(to right, var(--gradient-from), var(--gradient-via), var(--gradient-to));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+

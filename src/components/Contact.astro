@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import Tooltip from "../components/ui/Tooltip.vue";
+import CopyEmailToClipboard from "./ui/copyEmailToClipboard.vue";
+
+const correoVisible = "sanchez.nicolas.9917@gmail.com";
+
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/Nikolo9z", img: "/images/github.svg", tooltip: "Abrir GitHub" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/nicolas-sanchez-098067279/", img: "/images/linkedin.svg", tooltip: "Abrir LinkedIn" }
+];
+---
+
+<section id="contacto" class="py-8">
+  <h2 class="text-center font-bold text-3xl mb-4">Contacto</h2>
+  <p class="text-lg font-semibold text-center px-4">
+    Si tienes interés en trabajar conmigo, puedes contactarme por los siguientes medios:
+  </p>
+
+  <div class="flex justify-center gap-5 flex-wrap mt-6">
+    {socialLinks.map((social) => (
+      <Tooltip client:load text={social.tooltip}>
+        <a
+          href={social.url}
+          target="_blank"
+          class="cursor-pointer flex items-center gap-2 font-semibold border border-[var(--title-color)] px-4 py-2 bg-gray-800 rounded-full hover:bg-gray-700 transition"
+        >
+          <Image width={24} height={24} src={social.img} alt="" class="size-6" />
+          {social.name}
+        </a>
+      </Tooltip>
+    ))}
+
+    <div class="relative w-full max-w-sm text-center max-sm:pb-20">
+      <label for="inputcorreo" class="sr-only">Correo electrónico</label>
+      <input
+        id="inputcorreo"
+        type="text"
+        class="w-full bg-gray-50 border border-[var(--title-color)] text-sm rounded-lg p-2.5 dark:bg-[#10002b] font-semibold focus:outline-none"
+        value={correoVisible}
+        disabled
+        readonly
+      />
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 max-sm:pb-20">
+        <Tooltip client:load text="Copiar Correo">
+          <CopyEmailToClipboard client:load>
+            <svg class="w-4 h-4 text-gray-400 cursor-pointer hover:text-gray-300 transition" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+              <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
+            </svg>
+          </CopyEmailToClipboard>
+        </Tooltip>
+      </div>
+    </div>
+  </div>
+</section>

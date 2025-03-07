@@ -1,0 +1,50 @@
+---
+import Tooltip from "../components/ui/Tooltip.vue";
+import CopyEmailToClipboard from "./ui/copyEmailToClipboard.vue";
+---
+
+<main id="inicio" class="flex md:justify-start justify-center items-center min-h-full max-h-full mx-auto ">
+  <div class="flex flex-col  px-2 items-start max-sm:items-center max-md:items-center max-md:text-center">
+    <h1 class="max-sm:text-4xl text-8xl max-md:text-4xl max-sm:pl-10">Hola! 👋</h1>
+    <h1 class="max-sm:text-4xl text-8xl max-md:text-5xl">Soy Nicolás Sánchez,</h1>
+    <h1 class="max-md:text-4xl text-8xl font-medium gradient-text">
+      Ingeniero Civil en Informática.
+    </h1>
+
+    <div class="flex max-md:flex-wrap justify-center gap-5 py-12">
+        <Tooltip client:load text="GitHub">
+            <a href="https://github.com/Nikolo9z" target="_blank">
+              <img class="max-md:size-16 size-10" src="/images/github.svg" alt="GitHub">
+            </a>
+          </Tooltip>
+      
+        <Tooltip client:load text="LinkedIn">
+          <a href="https://www.linkedin.com/in/nicolas-sanchez-098067279/" target="_blank">
+            <img class="max-md:size-16 size-11" src="/images/linkedin.svg" alt="LinkedIn">
+          </a>
+        </Tooltip>
+      
+        <CopyEmailToClipboard client:load>
+        <Tooltip client:load text="Copiar Correo">
+            <img class="max-md:size-16 size-11" src="/images/gmail.svg" alt="Correo">
+          </Tooltip>
+        </CopyEmailToClipboard>
+        <div class="w-full md:w-auto px-10 mt-4 md:mt-0 text-center">
+          <a href="/CV_Nicolas_Sanchez.pdf" target="_blank" rel="noopener noreferrer"
+            class="group rounded-lg relative inline-block overflow-hidden border self-end border-indigo-600 px-8 py-2 focus:outline-none focus:ring hover:text-indigo-200"
+          >
+            <span
+              class="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-[var(--gradient-from)] via-[var(--gradient-via)] to-[var(--gradient-to)] transition-all group-hover:h-full"
+            ></span>
+            
+            <p
+              class="relative text-lg max-md:text-xl font-medium text-indigo-600 transition-colors group-hover:text-white"
+            >
+              Descargar CV
+            </p>
+          </a> 
+        </div>
+      </div>
+      
+  </div>
+</main>

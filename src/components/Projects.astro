@@ -1,0 +1,95 @@
+---
+import ProjectCard from "./ui/ProjectCard.vue";
+import imejiImage from "../assets/projectsimage/imeji.png";
+import apipiImage from "../assets/projectsimage/apipi.png";
+import acortadorImage from "../assets/projectsimage/acortador.png";
+import kanbanImage from "../assets/projectsimage/kanban.png";
+
+const projects = [
+  {
+    title: "ImeJI (en proceso)",
+    description:
+      "Sitio web que utilizara los servicios que ofrece la API de procesamiento de imagenes utilizando bentogrid, incluyendo un editor de imagenes, galeria de imagenes y un sistema de autenticacion de usuarios con JWT",
+    image: imejiImage.src,
+    technologies: [
+      { name: "React", img: "/images/react.svg", color: "#5091B1" },
+      { name: "Tailwind", img: "/images/tailwind.svg", color: "#44A8B3" },
+    ],
+    links: [{ text: "Web", url: "https://imeji.pages.dev/" }],
+  },
+  {
+    title: "API Procesador de Imágenes",
+    description:
+      "API REST para el procesamiento de imagenes, incluye endpoints para subir imagenes, guardar imagenes en S3, cambiar tamaño, rotar, girar y cambiar el formato. Ademas incluye autenticacion de usuarios con JWT.",
+    image: apipiImage.src,
+    technologies: [
+      { name: "Express", img: "/images/node.svg", color: "#93D344" },
+      { name: "MongoDB", img: "/images/mongo.svg", color: "#429744" },
+      { name: "S3 AWS", img: "/images/aws.svg", color: "#FF9900" },
+    ],
+    links: [
+      {
+        text: "Web",
+        url: "https://imageprocessingapi-tdp7.onrender.com/api-docs/",
+      },
+      { text: "Código", url: "https://github.com/Nikolo9z/ImageProcessingAPI" },
+    ],
+  },
+  {
+    title: "Acortar URLs",
+    description:
+      "Acortar URLs funciona mediante un identificador único para cada URL que sirve tanto para acortar la URL y buscar la URL original. La URL acortada se genera a partir de un identificador único que se asigna a cada URL que se acorta.",
+    image: acortadorImage.src,
+    technologies: [
+      { name: "Angular", img: "/images/angular.svg", color: "#c3002f" },
+      { name: "Tailwind", img: "/images/tailwind.svg", color: "#44a8b3" },
+      { name: ".NET", img: "/images/dotnet.svg", color: "#6d429c" },
+      { name: "PostgreSQL", img: "/images/postgresql.svg", color: "#336791" },
+    ],
+    links: [
+      { text: "Web", url: "https://acortadorurls.pages.dev/" },
+      {
+        text: "Código Sitio",
+        url: "https://github.com/Nikolo9z/AcortadorUrls",
+      },
+      {
+        text: "Código API",
+        url: "https://github.com/Nikolo9z/Acortador-Url-API",
+      },
+    ],
+  },
+  {
+    title: "KANBAN",
+    description:
+      "Web para utilizar la metodología KANBAN utilizando DRAG AND DROP que incluye funciones para agregar tareas, asignar encargado, fechas de inicio y termino.",
+    image: kanbanImage.src,
+    technologies: [
+      { name: "Angular", img: "/images/angular.svg", color: "#c3002f" },
+      { name: "Bootstrap", img: "/images/bootstrap.svg", color: "#563d7c" },
+    ],
+    links: [
+      { text: "Web", url: "https://kanban-c7j.pages.dev/" },
+      { text: "Código", url: "https://github.com/Nikolo9z/kanban" },
+    ],
+  },
+];
+---
+
+<section id="proyectos" class="min-h-full mx-auto overflow-auto">
+  <h2 class="text-center text-[#dddf00] font-bold p-3">Mis Proyectos</h2>
+
+  <div class="flex flex-col gap-6">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          client:load
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          technologies={project.technologies}
+          links={project.links}
+        />
+      ))
+    }
+  </div>
+</section>
